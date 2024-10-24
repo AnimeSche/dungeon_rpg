@@ -73,12 +73,52 @@
         "files": [
           "src/main/java/net/skillfi/dungeonrpg/IClass.java"
         ]
-      }
+      },
+      "path": "~/Api"
+    },
+    {
+      "name": "PlayerClass",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "player_class",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/PlayerClass.java"
+        ]
+      },
+      "path": "~/Api"
+    },
+    {
+      "name": "IBuffs",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "i_buffs",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/api/IBuffs.java"
+        ]
+      },
+      "path": "~/Api"
+    },
+    {
+      "name": "ClassBuffs",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "class_buffs",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/ClassBuffs.java"
+        ]
+      },
+      "path": "~/Api"
     }
   ],
   "variable_elements": [
     {
-      "name": "PlayerClass",
+      "name": "player_class",
       "type": "playerclass",
       "scope": "player_lifetime",
       "value": "PlayerClass.EMPTY"

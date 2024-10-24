@@ -1,5 +1,6 @@
 package net.skillfi.dungeonrpg.network;
 
+import net.skillfi.dungeonrpg.api.PlayerClass;
 import net.skillfi.dungeonrpg.DungeonRpgMod;
 
 import net.minecraftforge.network.PacketDistributor;
@@ -67,7 +68,7 @@ public class DungeonRpgModVariables {
 			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			if (!event.isWasDeath()) {
-				clone.PlayerClass = original.PlayerClass;
+				clone.player_class = original.player_class;
 			}
 		}
 	}
@@ -103,7 +104,7 @@ public class DungeonRpgModVariables {
 	}
 
 	public static class PlayerVariables {
-		public PlayerClass PlayerClass = PlayerClass.EMPTY;
+		public PlayerClass player_class = PlayerClass.EMPTY;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -112,13 +113,13 @@ public class DungeonRpgModVariables {
 
 		public Tag writeNBT() {
 			CompoundTag nbt = new CompoundTag();
-			nbt.put("PlayerClass", PlayerClass.toNBT(new CompoundTag()));
+			nbt.put("player_class", player_class.toNBT(new CompoundTag()));
 			return nbt;
 		}
 
 		public void readNBT(Tag tag) {
 			CompoundTag nbt = (CompoundTag) tag;
-			PlayerClass = PlayerClass.of(nbt.getCompound("PlayerClass"));
+			player_class = PlayerClass.of(nbt.getCompound("player_class"));
 		}
 	}
 
@@ -143,7 +144,7 @@ public class DungeonRpgModVariables {
 			context.enqueueWork(() -> {
 				if (!context.getDirection().getReceptionSide().isServer()) {
 					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
-					variables.PlayerClass = message.data.PlayerClass;
+					variables.player_class = message.data.player_class;
 				}
 			});
 			context.setPacketHandled(true);
