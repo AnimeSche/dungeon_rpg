@@ -1,0 +1,154 @@
+{
+  "mod_elements": [
+    {
+      "name": "Durandal",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "durandal",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/item/DurandalItem.java",
+          "src/main/resources/assets/dungeon_rpg/models/item/durandal.json"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "NeedleTree",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "needle_tree",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/client/renderer/NeedleTreeRenderer.java",
+          "src/main/java/net/skillfi/dungeonrpg/entity/NeedleTreeEntity.java",
+          "src/main/resources/data/dungeon_rpg/forge/biome_modifier/needle_tree_biome_modifier.json",
+          "src/main/resources/assets/dungeon_rpg/models/item/needle_tree_spawn_egg.json"
+        ]
+      },
+      "path": "~/Entities"
+    },
+    {
+      "name": "ClassSelector",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "class_selector",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/client/gui/ClassSelectorScreen.java",
+          "src/main/java/net/skillfi/dungeonrpg/world/inventory/ClassSelectorMenu.java"
+        ]
+      },
+      "path": "~/Gui"
+    },
+    {
+      "name": "ClassSelectorOnOpen",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "class_selector_on_open",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/procedures/ClassSelectorOnOpenProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "guistate",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/Gui"
+    },
+    {
+      "name": "IClass",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "i_class",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/IClass.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "PlayerClass",
+      "type": "playerclass",
+      "scope": "player_lifetime",
+      "value": "PlayerClass.EMPTY"
+    }
+  ],
+  "sound_elements": [],
+  "tag_elements": {
+    "ITEMS:minecraft:swords": [
+      "~CUSTOM:Durandal"
+    ]
+  },
+  "tab_element_order": {},
+  "language_map": {
+    "ru_ru": {
+      "gui.dungeon_rpg.class_selector.button_confirm": "Confirm",
+      "item.dungeon_rpg.needle_tree_spawn_egg": "ИглоДрево Spawn Egg",
+      "entity.dungeon_rpg.needle_tree": "ИглоДрево",
+      "item.dungeon_rpg.durandal": "Дурандаль",
+      "gui.dungeon_rpg.class_selector.label_class": "Class",
+      "gui.dungeon_rpg.class_selector.label_1": "1",
+      "gui.dungeon_rpg.class_selector.label_level": "level"
+    },
+    "en_us": {
+      "gui.dungeon_rpg.class_selector.button_confirm": "Confirm",
+      "item.dungeon_rpg.needle_tree_spawn_egg": "Needle Tree Spawn Egg",
+      "entity.dungeon_rpg.needle_tree": "Needle Tree",
+      "item.dungeon_rpg.durandal": "Durandal Sword",
+      "gui.dungeon_rpg.class_selector.label_class": "Class:",
+      "gui.dungeon_rpg.class_selector.label_1": "1",
+      "gui.dungeon_rpg.class_selector.label_level": "level"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Items",
+        "children": []
+      },
+      {
+        "name": "Entities",
+        "children": []
+      },
+      {
+        "name": "Gui",
+        "children": []
+      },
+      {
+        "name": "Api",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "dungeon_rpg",
+    "modName": "Dungeon RPg",
+    "version": "1.0.0",
+    "author": "skillfi",
+    "websiteURL": "https://mcreator.net",
+    "license": "Apache License version 2.0",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [
+      "mcreator_link"
+    ],
+    "currentGenerator": "forge-1.20.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.skillfi.dungeonrpg"
+  },
+  "mcreatorVersion": 202400340615
+}

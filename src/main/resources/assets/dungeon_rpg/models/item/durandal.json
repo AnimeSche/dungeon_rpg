@@ -1,0 +1,7 @@
+{
+  "parent": "dungeon_rpg:custom/durandal",
+  "textures": {
+    "0": "dungeon_rpg:block/ricasso",
+    "particle": "dungeon_rpg:item/1"
+  }
+}

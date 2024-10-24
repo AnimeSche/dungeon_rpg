@@ -1,0 +1,9 @@
+{
+  "gui.dungeon_rpg.class_selector.button_confirm": "Confirm",
+  "item.dungeon_rpg.needle_tree_spawn_egg": "ИглоДрево Spawn Egg",
+  "entity.dungeon_rpg.needle_tree": "ИглоДрево",
+  "item.dungeon_rpg.durandal": "Дурандаль",
+  "gui.dungeon_rpg.class_selector.label_class": "Class",
+  "gui.dungeon_rpg.class_selector.label_1": "1",
+  "gui.dungeon_rpg.class_selector.label_level": "level"
+}
