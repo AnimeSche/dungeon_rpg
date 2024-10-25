@@ -67,8 +67,13 @@ public class DungeonRpgModVariables {
 			event.getOriginal().revive();
 			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
+			clone.player_class = original.player_class;
+			clone.hasClass = original.hasClass;
+			clone.racePage = original.racePage;
+			clone.hasRace = original.hasRace;
+			clone.playerSkills = original.playerSkills;
+			clone.playerRace = original.playerRace;
 			if (!event.isWasDeath()) {
-				clone.player_class = original.player_class;
 			}
 		}
 	}
@@ -105,6 +110,11 @@ public class DungeonRpgModVariables {
 
 	public static class PlayerVariables {
 		public PlayerClass player_class = PlayerClass.EMPTY;
+		public boolean hasClass = false;
+		public double racePage = 0;
+		public boolean hasRace = false;
+		public Skills playerSkills = Skills.EMPTY;
+		public Race playerRace = Race.HUMAN;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -114,12 +124,22 @@ public class DungeonRpgModVariables {
 		public Tag writeNBT() {
 			CompoundTag nbt = new CompoundTag();
 			nbt.put("player_class", player_class.toNBT(new CompoundTag()));
+			nbt.putBoolean("hasClass", hasClass);
+			nbt.putDouble("racePage", racePage);
+			nbt.putBoolean("hasRace", hasRace);
+			nbt.put("playerSkills", playerSkills.toNBT(new CompoundTag()));
+			nbt.put("playerRace", playerRace.toNBT(new CompoundTag()));
 			return nbt;
 		}
 
 		public void readNBT(Tag tag) {
 			CompoundTag nbt = (CompoundTag) tag;
 			player_class = PlayerClass.of(nbt.getCompound("player_class"));
+			hasClass = nbt.getBoolean("hasClass");
+			racePage = nbt.getDouble("racePage");
+			hasRace = nbt.getBoolean("hasRace");
+			playerSkills = Skills.of(nbt.getCompound("playerSkills"));
+			playerRace = Race.of(nbt.getCompound("playerRace"));
 		}
 	}
 
@@ -145,6 +165,11 @@ public class DungeonRpgModVariables {
 				if (!context.getDirection().getReceptionSide().isServer()) {
 					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 					variables.player_class = message.data.player_class;
+					variables.hasClass = message.data.hasClass;
+					variables.racePage = message.data.racePage;
+					variables.hasRace = message.data.hasRace;
+					variables.playerSkills = message.data.playerSkills;
+					variables.playerRace = message.data.playerRace;
 				}
 			});
 			context.setPacketHandled(true);

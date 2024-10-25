@@ -3,7 +3,7 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 282,
+    "width": 177,
     "height": 166,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
@@ -11,27 +11,18 @@
     "doesPauseGame": false,
     "components": [
       {
-        "type": "image",
-        "data": {
-          "image": "class-gui.png",
-          "use1Xscale": true,
-          "x": 60,
-          "y": 17
-        }
-      },
-      {
         "type": "label",
         "data": {
           "name": "label_class",
           "text": {
-            "fixedValue": "Class:"
+            "fixedValue": "Human"
           },
           "color": {
-            "value": -16777216,
+            "value": -16711681,
             "falpha": 0.0
           },
-          "x": 128,
-          "y": 68
+          "x": 213,
+          "y": 45
         }
       },
       {
@@ -42,38 +33,130 @@
           "isUndecorated": false,
           "width": 56,
           "height": 20,
-          "x": 181,
-          "y": 146
+          "x": 183,
+          "y": 176
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_backarrow",
+          "image": "backarrow.png",
+          "hoveredImage": "backarrow.png",
+          "x": 138,
+          "y": 180
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_nextarrow",
+          "image": "nextarrowoff.png",
+          "hoveredImage": "nextarrow.png",
+          "x": 266,
+          "y": 180
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "racegui.png",
+          "use1Xscale": false,
+          "x": 125,
+          "y": 27
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "humanrace.png",
+          "use1Xscale": false,
+          "x": 144,
+          "y": 42
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "sloty.png",
+          "use1Xscale": false,
+          "x": 301,
+          "y": 28
         }
       },
       {
         "type": "label",
         "data": {
-          "name": "label_1",
+          "name": "label_health",
           "text": {
-            "fixedValue": "1"
+            "fixedValue": "Health:"
           },
           "color": {
-            "value": -16777216,
+            "value": -16737895,
             "falpha": 0.0
           },
-          "x": 157,
-          "y": 68
+          "x": 140,
+          "y": 72
         }
       },
       {
         "type": "label",
         "data": {
-          "name": "label_level",
+          "name": "label_health_value",
           "text": {
-            "fixedValue": "level"
+            "fixedValue": "health_value"
           },
           "color": {
-            "value": -12829636,
+            "value": -13395712,
             "falpha": 0.0
           },
-          "x": 163,
-          "y": 68
+          "x": 178,
+          "y": 72
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_countclasses",
+          "text": {
+            "fixedValue": "0"
+          },
+          "color": {
+            "value": -16711681,
+            "falpha": 0.0
+          },
+          "x": 308,
+          "y": 34
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_mana",
+          "text": {
+            "fixedValue": "Mana:"
+          },
+          "color": {
+            "value": -13421569,
+            "falpha": 0.0
+          },
+          "x": 141,
+          "y": 84
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_mana_value",
+          "text": {
+            "fixedValue": "mana_value"
+          },
+          "color": {
+            "value": -13421569,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 84
         }
       }
     ],

@@ -22,46 +22,13 @@
       "registry_name": "needle_tree",
       "metadata": {
         "files": [
-          "src/main/java/net/skillfi/dungeonrpg/client/renderer/NeedleTreeRenderer.java",
+          "src/main/resources/assets/dungeon_rpg/models/item/needle_tree_spawn_egg.json",
           "src/main/java/net/skillfi/dungeonrpg/entity/NeedleTreeEntity.java",
-          "src/main/resources/data/dungeon_rpg/forge/biome_modifier/needle_tree_biome_modifier.json",
-          "src/main/resources/assets/dungeon_rpg/models/item/needle_tree_spawn_egg.json"
+          "src/main/java/net/skillfi/dungeonrpg/client/renderer/NeedleTreeRenderer.java",
+          "src/main/resources/data/dungeon_rpg/forge/biome_modifier/needle_tree_biome_modifier.json"
         ]
       },
       "path": "~/Entities"
-    },
-    {
-      "name": "ClassSelector",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "class_selector",
-      "metadata": {
-        "files": [
-          "src/main/java/net/skillfi/dungeonrpg/client/gui/ClassSelectorScreen.java",
-          "src/main/java/net/skillfi/dungeonrpg/world/inventory/ClassSelectorMenu.java"
-        ]
-      },
-      "path": "~/Gui"
-    },
-    {
-      "name": "ClassSelectorOnOpen",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "class_selector_on_open",
-      "metadata": {
-        "files": [
-          "src/main/java/net/skillfi/dungeonrpg/procedures/ClassSelectorOnOpenProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "guistate",
-            "type": "map"
-          }
-        ]
-      },
-      "path": "~/Gui"
     },
     {
       "name": "IClass",
@@ -71,7 +38,7 @@
       "registry_name": "i_class",
       "metadata": {
         "files": [
-          "src/main/java/net/skillfi/dungeonrpg/IClass.java"
+          "src/main/java/net/skillfi/dungeonrpg/api/IClass.java"
         ]
       },
       "path": "~/Api"
@@ -84,7 +51,7 @@
       "registry_name": "player_class",
       "metadata": {
         "files": [
-          "src/main/java/net/skillfi/dungeonrpg/PlayerClass.java"
+          "src/main/java/net/skillfi/dungeonrpg/api/PlayerClass.java"
         ]
       },
       "path": "~/Api"
@@ -110,18 +77,344 @@
       "registry_name": "class_buffs",
       "metadata": {
         "files": [
-          "src/main/java/net/skillfi/dungeonrpg/ClassBuffs.java"
+          "src/main/java/net/skillfi/dungeonrpg/api/ClassBuffs.java"
         ]
       },
       "path": "~/Api"
+    },
+    {
+      "name": "ITeam",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "i_team",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/api/ITeam.java"
+        ]
+      },
+      "path": "~/Api"
+    },
+    {
+      "name": "Team",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "team",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/api/Team.java"
+        ]
+      },
+      "path": "~/Api"
+    },
+    {
+      "name": "ReencarnatedRule",
+      "type": "gamerule",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reencarnated_rule",
+      "metadata": {
+        "files": [],
+        "type": "logic"
+      },
+      "path": "~/Gui"
+    },
+    {
+      "name": "RaceSelectorOpen",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "race_selector_open",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/procedures/RaceSelectorOpenProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "guistate",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/Gui"
+    },
+    {
+      "name": "RaceName",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "race_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/procedures/RaceNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Gui/Variables"
+    },
+    {
+      "name": "RaceSelect",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "race_select",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/world/inventory/RaceSelectMenu.java",
+          "src/main/java/net/skillfi/dungeonrpg/client/gui/RaceSelectScreen.java",
+          "src/main/java/net/skillfi/dungeonrpg/network/RaceSelectButtonMessage.java"
+        ]
+      },
+      "path": "~/Gui"
+    },
+    {
+      "name": "RaceHealth",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "race_health",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/procedures/RaceHealthProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Gui/Variables"
+    },
+    {
+      "name": "HumanRaceIcon",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "human_race_icon",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/procedures/HumanRaceIconProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Gui/Variables"
+    },
+    {
+      "name": "ElfRaceIcon",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "elf_race_icon",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/procedures/ElfRaceIconProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Gui/Variables"
+    },
+    {
+      "name": "RaceSelectNextPage",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "race_select_next_page",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/procedures/RaceSelectNextPageProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Gui"
+    },
+    {
+      "name": "RaceSelectPreviousPage",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "race_select_previous_page",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/procedures/RaceSelectPreviousPageProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Gui"
+    },
+    {
+      "name": "RaceSelectGui",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "race_select_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/procedures/RaceSelectGuiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Gui"
+    },
+    {
+      "name": "ISkills",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "i_skills",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/api/ISkills.java"
+        ]
+      },
+      "path": "~/Api"
+    },
+    {
+      "name": "Skills",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "skills",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/api/Skills.java"
+        ]
+      },
+      "path": "~/Api"
+    },
+    {
+      "name": "IRace",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "i_race",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/api/IRace.java"
+        ]
+      },
+      "path": "~/Api"
+    },
+    {
+      "name": "Race",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "race",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/api/Race.java"
+        ]
+      },
+      "path": "~/Api"
+    },
+    {
+      "name": "RaceSelection",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "race_selection",
+      "metadata": {
+        "files": [
+          "src/main/java/net/skillfi/dungeonrpg/procedures/RaceSelectionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Gui"
     }
   ],
   "variable_elements": [
     {
       "name": "player_class",
       "type": "playerclass",
-      "scope": "player_lifetime",
+      "scope": "player_persistent",
       "value": "PlayerClass.EMPTY"
+    },
+    {
+      "name": "hasClass",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "racePage",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "hasRace",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "playerSkills",
+      "type": "skills",
+      "scope": "player_persistent",
+      "value": "Skills.EMPTY"
+    },
+    {
+      "name": "playerRace",
+      "type": "race",
+      "scope": "player_persistent",
+      "value": "Race.HUMAN"
     }
   ],
   "sound_elements": [],
@@ -133,22 +426,26 @@
   "tab_element_order": {},
   "language_map": {
     "ru_ru": {
-      "gui.dungeon_rpg.class_selector.button_confirm": "Confirm",
+      "gamerule.reencarnatedRule": "Переродится",
       "item.dungeon_rpg.needle_tree_spawn_egg": "ИглоДрево Spawn Egg",
+      "gui.dungeon_rpg.race_select.label_health": "Health: ",
       "entity.dungeon_rpg.needle_tree": "ИглоДрево",
+      "gui.race.elf": "Лесной ельф",
+      "gamerule.reencarnatedRule.description": "Ты переродишся в выбраную расу",
       "item.dungeon_rpg.durandal": "Дурандаль",
-      "gui.dungeon_rpg.class_selector.label_class": "Class",
-      "gui.dungeon_rpg.class_selector.label_1": "1",
-      "gui.dungeon_rpg.class_selector.label_level": "level"
+      "gui.dungeon_rpg.race_select.button_reincarnate": "Reincarnate",
+      "gui.race.human": "Человек"
     },
     "en_us": {
-      "gui.dungeon_rpg.class_selector.button_confirm": "Confirm",
+      "gamerule.reencarnatedRule": "Reecarnated",
       "item.dungeon_rpg.needle_tree_spawn_egg": "Needle Tree Spawn Egg",
+      "gui.dungeon_rpg.race_select.label_health": "Health: ",
       "entity.dungeon_rpg.needle_tree": "Needle Tree",
+      "gui.race.elf": "Forest Elf",
+      "gamerule.reencarnatedRule.description": "Your reecarnated to seleceted race",
       "item.dungeon_rpg.durandal": "Durandal Sword",
-      "gui.dungeon_rpg.class_selector.label_class": "Class:",
-      "gui.dungeon_rpg.class_selector.label_1": "1",
-      "gui.dungeon_rpg.class_selector.label_level": "level"
+      "gui.dungeon_rpg.race_select.button_reincarnate": "Reincarnate",
+      "gui.race.human": "Human"
     }
   },
   "foldersRoot": {
@@ -164,7 +461,12 @@
       },
       {
         "name": "Gui",
-        "children": []
+        "children": [
+          {
+            "name": "Variables",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Api",
@@ -184,11 +486,12 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [
-      "mcreator_link"
+      "mcreator_link",
+      "geckolib"
     ],
     "currentGenerator": "forge-1.20.1",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.skillfi.dungeonrpg"
   },
-  "mcreatorVersion": 202400340615
+  "mcreatorVersion": 202400342716
 }

@@ -1,9 +1,11 @@
 {
-  "gui.dungeon_rpg.class_selector.button_confirm": "Confirm",
+  "gamerule.reencarnatedRule": "Reecarnated",
   "item.dungeon_rpg.needle_tree_spawn_egg": "Needle Tree Spawn Egg",
+  "gui.dungeon_rpg.race_select.label_health": "Health: ",
   "entity.dungeon_rpg.needle_tree": "Needle Tree",
+  "gui.race.elf": "Forest Elf",
+  "gamerule.reencarnatedRule.description": "Your reecarnated to seleceted race",
   "item.dungeon_rpg.durandal": "Durandal Sword",
-  "gui.dungeon_rpg.class_selector.label_class": "Class:",
-  "gui.dungeon_rpg.class_selector.label_1": "1",
-  "gui.dungeon_rpg.class_selector.label_level": "level"
+  "gui.dungeon_rpg.race_select.button_reincarnate": "Reincarnate",
+  "gui.race.human": "Human"
 }

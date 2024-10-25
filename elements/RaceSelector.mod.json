@@ -1,0 +1,168 @@
+{
+  "_fv": 69,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": true,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "racegui.png",
+          "use1Xscale": false,
+          "x": 127,
+          "y": 27
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "humanrace.png",
+          "use1Xscale": false,
+          "x": 146,
+          "y": 42
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_select",
+          "text": "Select",
+          "isUndecorated": false,
+          "width": 56,
+          "height": 20,
+          "x": 187,
+          "y": 177
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_nextarrowoff",
+          "image": "nextarrowoff.png",
+          "hoveredImage": "nextarrow.png",
+          "onClick": {
+            "name": "NextPageRace"
+          },
+          "x": 267,
+          "y": 183
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_backarrow",
+          "image": "backarrow.png",
+          "hoveredImage": "backarrow.png",
+          "x": 140,
+          "y": 182
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_hp",
+          "text": {
+            "fixedValue": "HP:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 139,
+          "y": 73
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_hp_value",
+          "text": {
+            "fixedValue": ""
+          },
+          "color": {
+            "value": -16738048,
+            "falpha": 0.0
+          },
+          "x": 159,
+          "y": 80
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_mana",
+          "text": {
+            "fixedValue": "Mana:"
+          },
+          "color": {
+            "value": -16750900,
+            "falpha": 0.0
+          },
+          "x": 139,
+          "y": 83
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_mana_value",
+          "text": {
+            "fixedValue": "150"
+          },
+          "color": {
+            "value": -16763905,
+            "falpha": 0.0
+          },
+          "x": 165,
+          "y": 83
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_100",
+          "text": {
+            "fixedValue": "100"
+          },
+          "color": {
+            "value": -13395712,
+            "falpha": 0.0
+          },
+          "x": 155,
+          "y": 73
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_human",
+          "text": {
+            "fixedValue": "Human"
+          },
+          "color": {
+            "value": -13421569,
+            "falpha": 0.0
+          },
+          "x": 213,
+          "y": 45
+        }
+      }
+    ],
+    "onOpen": {
+      "name": "RaceSelectorOpen"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

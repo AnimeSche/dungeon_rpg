@@ -1,7 +1,6 @@
 
 package net.skillfi.dungeonrpg.world.inventory;
 
-import net.skillfi.dungeonrpg.procedures.ClassSelectorOnOpenProcedure;
 import net.skillfi.dungeonrpg.init.DungeonRpgModMenus;
 
 import net.minecraftforge.items.ItemStackHandler;
@@ -23,7 +22,7 @@ import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
-public class ClassSelectorMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
+public class RaceSelectMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
 	public final Level world;
 	public final Player entity;
@@ -36,8 +35,8 @@ public class ClassSelectorMenu extends AbstractContainerMenu implements Supplier
 	private Entity boundEntity = null;
 	private BlockEntity boundBlockEntity = null;
 
-	public ClassSelectorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(DungeonRpgModMenus.CLASS_SELECTOR.get(), id);
+	public RaceSelectMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+		super(DungeonRpgModMenus.RACE_SELECT.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
 		this.internal = new ItemStackHandler(0);
@@ -49,7 +48,6 @@ public class ClassSelectorMenu extends AbstractContainerMenu implements Supplier
 			this.z = pos.getZ();
 			access = ContainerLevelAccess.create(world, pos);
 		}
-		ClassSelectorOnOpenProcedure.execute(guistate);
 	}
 
 	@Override
